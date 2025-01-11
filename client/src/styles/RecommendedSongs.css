@@ -1,0 +1,146 @@
+.playlist-container {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 800px;
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.playlist-header,
+.track-row {
+  display: grid;
+  grid-template-columns: 40px 50px minmax(200px, 2fr) minmax(150px, 1fr) 100px 100px;
+  padding: 0.75rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.playlist-header {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-bottom: 1px solid #4a5568;
+}
+
+.track-row {
+  transition: background-color 0.2s ease;
+}
+
+.track-row:hover {
+  background-color: #3d4756;
+}
+
+.track-number {
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+
+.track-album-pic {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.track-album-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.track-title {
+  color: #e2e8f0;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-duration {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  text-align: right;
+  justify-self: end;
+  padding-right: 2rem;
+  min-width: 60px;
+}
+
+.header-duration {
+  text-align: right;
+  justify-self: end;
+  padding-right: 2rem;
+  min-width: 60px;
+}
+
+.track-external-link a {
+  color: #a0aec0;
+  text-decoration: none;
+}
+
+.track-external-link a:hover {
+  color: #e2e8f0;
+}
+
+.track-external-link svg {
+  color: #a0aec0;
+}
+
+.track-external-link svg:hover {
+  color: #e2e8f0;
+}
+
+@media (max-width: 1024px) {
+
+  .playlist-header,
+  .track-row {
+    grid-template-columns: 40px 40px 1fr 120px 80px 80px;
+  }
+
+  .track-duration,
+  .header-duration {
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .playlist-header,
+  .track-row {
+    grid-template-columns: 40px 40px 1fr 100px 60px;
+  }
+
+  .track-external-link,
+  .header-external-link {
+    display: none;
+  }
+
+  .track-album-pic {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .playlist-header,
+  .track-row {
+    grid-template-columns: 40px 40px 1fr 100px;
+  }
+
+  .header-duration,
+  .track-duration {
+    display: none;
+  }
+}
